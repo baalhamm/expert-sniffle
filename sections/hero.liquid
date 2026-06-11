@@ -1,0 +1,86 @@
+<section class="hero{% if section.settings.image == blank %} hero--placeholder{% endif %}">
+  {%- if section.settings.image != blank -%}
+    {{ section.settings.image | image_url: width: 2400 | image_tag:
+      class: 'hero__image',
+      sizes: '100vw',
+      widths: '750, 1100, 1500, 1900, 2400',
+      alt: section.settings.heading | escape
+    }}
+  {%- endif -%}
+  <div class="hero__overlay"></div>
+  <div class="hero__content page-width">
+    {%- if section.settings.kicker != blank -%}
+      <p class="hero__kicker">{{ section.settings.kicker | escape }}</p>
+    {%- endif -%}
+    <h1 class="hero__heading">{{ section.settings.heading | escape }}</h1>
+    {%- if section.settings.subheading != blank -%}
+      <p class="hero__subheading">{{ section.settings.subheading | escape }}</p>
+    {%- endif -%}
+    <div class="hero__buttons">
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link }}" class="button button--primary">{{ section.settings.button_label | escape }}</a>
+      {%- endif -%}
+      {%- if section.settings.button_label_2 != blank -%}
+        <a href="{{ section.settings.button_link_2 }}" class="button button--outline">{{ section.settings.button_label_2 | escape }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker text",
+      "default": "Fine jewellery & luxury timepieces"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Brilliance, Set in Blue"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Discover hand-selected diamonds, bespoke pieces and the world's most coveted watches."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "First button label",
+      "default": "Shop jewellery"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "First button link"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Second button label",
+      "default": "Shop watches"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Second button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero banner"
+    }
+  ]
+}
+{% endschema %}

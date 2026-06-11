@@ -1,0 +1,85 @@
+<section class="section main-cart">
+  <div class="page-width">
+    <header class="collection-header">
+      <h1 class="collection-header__title">Your cart</h1>
+    </header>
+
+    {%- if cart.item_count > 0 -%}
+      <form action="{{ routes.cart_url }}" method="post" id="CartForm" class="cart">
+        <table class="cart__table">
+          <thead>
+            <tr>
+              <th scope="col" colspan="2">Item</th>
+              <th scope="col">Quantity</th>
+              <th scope="col" class="cart__align-right">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for item in cart.items -%}
+              <tr class="cart__row">
+                <td class="cart__image-cell">
+                  <a href="{{ item.url }}">
+                    {%- if item.image -%}
+                      {{ item.image | image_url: width: 240 | image_tag: class: 'cart__image', alt: item.title | escape }}
+                    {%- endif -%}
+                  </a>
+                </td>
+                <td class="cart__details-cell">
+                  <a href="{{ item.url }}" class="cart__item-title">{{ item.product.title | escape }}</a>
+                  {%- unless item.product.has_only_default_variant -%}
+                    <p class="cart__item-variant">{{ item.variant.title | escape }}</p>
+                  {%- endunless -%}
+                  <p class="cart__item-price">{{ item.final_price | money }}</p>
+                  <a href="{{ item.url_to_remove }}" class="cart__remove">Remove</a>
+                </td>
+                <td class="cart__quantity-cell">
+                  <div class="quantity">
+                    <label for="CartQuantity-{{ item.index | plus: 1 }}" class="visually-hidden">Quantity for {{ item.title | escape }}</label>
+                    <input
+                      id="CartQuantity-{{ item.index | plus: 1 }}"
+                      class="quantity__input"
+                      type="number"
+                      name="updates[]"
+                      value="{{ item.quantity }}"
+                      min="0"
+                      inputmode="numeric"
+                    >
+                  </div>
+                </td>
+                <td class="cart__align-right">{{ item.final_line_price | money }}</td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+
+        <div class="cart__footer">
+          <div class="cart__note">
+            <label for="CartNote">Order note</label>
+            <textarea id="CartNote" name="note" placeholder="Gift message, engraving request...">{{ cart.note }}</textarea>
+          </div>
+          <div class="cart__summary">
+            <p class="cart__subtotal">
+              <span>Subtotal</span>
+              <span>{{ cart.total_price | money_with_currency }}</span>
+            </p>
+            <p class="cart__taxes-note">Taxes and shipping calculated at checkout.</p>
+            <button type="submit" name="update" class="button button--outline button--full">Update cart</button>
+            <button type="submit" name="checkout" class="button button--primary button--full">Checkout</button>
+          </div>
+        </div>
+      </form>
+    {%- else -%}
+      <div class="empty-state">
+        <p>Your cart is currently empty.</p>
+        <a href="{{ routes.all_products_collection_url }}" class="button button--primary">Continue shopping</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart page",
+  "settings": []
+}
+{% endschema %}

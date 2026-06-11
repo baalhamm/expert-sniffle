@@ -1,0 +1,14 @@
+{
+  "general": {
+    "meta": {
+      "page": "Page {{ page }}"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "general": {
+        "continue_shopping": "Continue shopping"
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "kicker": "Fine jewellery & luxury timepieces",
+        "heading": "Brilliance, Set in Blue",
+        "subheading": "Discover hand-selected diamonds, bespoke pieces and the world's most coveted watches.",
+        "button_label": "Shop jewellery",
+        "button_link": "shopify://collections/all",
+        "button_label_2": "Shop watches",
+        "button_link_2": "shopify://collections"
+      }
+    },
+    "categories": {
+      "type": "collection-list",
+      "blocks": {
+        "cat-1": {
+          "type": "collection",
+          "settings": { "title": "Rings" }
+        },
+        "cat-2": {
+          "type": "collection",
+          "settings": { "title": "Pendants & Necklaces" }
+        },
+        "cat-3": {
+          "type": "collection",
+          "settings": { "title": "Bracelets" }
+        },
+        "cat-4": {
+          "type": "collection",
+          "settings": { "title": "Watches" }
+        }
+      },
+      "block_order": ["cat-1", "cat-2", "cat-3", "cat-4"],
+      "settings": {
+        "heading": "Shop by category"
+      }
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "New arrivals",
+        "products_to_show": 8,
+        "columns": "4"
+      }
+    },
+    "story": {
+      "type": "image-with-text",
+      "settings": {
+        "kicker": "Our craft",
+        "heading": "Where rarity meets artistry"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "quote-1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Outstanding craftsmanship and service from start to finish. My engagement ring exceeded every expectation.",
+            "author": "James R."
+          }
+        },
+        "quote-2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The team sourced an incredible stone for my custom pendant and kept me updated at every stage. Flawless experience.",
+            "author": "Aaliyah M."
+          }
+        },
+        "quote-3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Fast, fully insured delivery and the watch was even better in person. I wouldn't shop anywhere else.",
+            "author": "Daniel K."
+          }
+        }
+      },
+      "block_order": ["quote-1", "quote-2", "quote-3"],
+      "settings": {
+        "heading": "What our clients say"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Join the Blue Diamond circle",
+        "text": "Be the first to discover new arrivals, private releases and exclusive events."
+      }
+    }
+  },
+  "order": ["hero", "categories", "featured", "story", "testimonials", "newsletter"]
+}

@@ -1,0 +1,47 @@
+<section class="section main-contact">
+  <div class="page-width page-width--narrow">
+    <header class="collection-header">
+      <h1 class="collection-header__title">{{ page.title | default: 'Contact us' | escape }}</h1>
+    </header>
+
+    {%- if page.content != blank -%}
+      <div class="rte main-contact__intro">{{ page.content }}</div>
+    {%- endif -%}
+
+    {% form 'contact', class: 'contact-form' %}
+      {%- if form.posted_successfully? -%}
+        <p class="form-success" tabindex="-1" autofocus>Thank you for your message. We will be in touch shortly.</p>
+      {%- endif -%}
+      {%- if form.errors -%}
+        <p class="form-error">{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>
+      {%- endif -%}
+
+      <div class="contact-form__row">
+        <div class="contact-form__field">
+          <label for="ContactName">Name</label>
+          <input id="ContactName" type="text" name="contact[name]" value="{{ form.name }}" autocomplete="name" required>
+        </div>
+        <div class="contact-form__field">
+          <label for="ContactEmail">Email</label>
+          <input id="ContactEmail" type="email" name="contact[email]" value="{{ form.email }}" autocomplete="email" required>
+        </div>
+      </div>
+      <div class="contact-form__field">
+        <label for="ContactPhone">Phone (optional)</label>
+        <input id="ContactPhone" type="tel" name="contact[phone]" value="{{ form.phone }}" autocomplete="tel">
+      </div>
+      <div class="contact-form__field">
+        <label for="ContactBody">Message</label>
+        <textarea id="ContactBody" name="contact[body]" rows="6" required>{{ form.body }}</textarea>
+      </div>
+      <button type="submit" class="button button--primary">Send message</button>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact page",
+  "settings": []
+}
+{% endschema %}

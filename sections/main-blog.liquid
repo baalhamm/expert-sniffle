@@ -1,0 +1,34 @@
+<section class="section main-blog">
+  <div class="page-width">
+    <header class="collection-header">
+      <h1 class="collection-header__title">{{ blog.title | escape }}</h1>
+    </header>
+
+    {%- paginate blog.articles by 9 -%}
+      <div class="blog-grid">
+        {%- for article in blog.articles -%}
+          <article class="article-card">
+            <a href="{{ article.url }}">
+              {%- if article.image -%}
+                <div class="article-card__media">
+                  {{ article.image | image_url: width: 800 | image_tag: alt: article.title | escape }}
+                </div>
+              {%- endif -%}
+              <h2 class="article-card__title">{{ article.title | escape }}</h2>
+              <p class="article-card__meta">{{ article.published_at | date: '%B %d, %Y' }}</p>
+              <p class="article-card__excerpt">{{ article.excerpt_or_content | strip_html | truncatewords: 24 }}</p>
+            </a>
+          </article>
+        {%- endfor -%}
+      </div>
+      {% render 'pagination', paginate: paginate %}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog page",
+  "settings": []
+}
+{% endschema %}

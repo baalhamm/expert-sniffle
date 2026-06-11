@@ -1,0 +1,40 @@
+<section class="section main-list-collections">
+  <div class="page-width">
+    <header class="collection-header">
+      <h1 class="collection-header__title">{{ section.settings.title | escape }}</h1>
+    </header>
+    <div class="collection-list__grid collection-list__grid--3">
+      {%- for collection in collections -%}
+        <a class="collection-card" href="{{ collection.url }}">
+          <div class="collection-card__media">
+            {%- if collection.featured_image != blank -%}
+              {{ collection.featured_image | image_url: width: 1000 | image_tag: class: 'collection-card__image', alt: collection.title | escape }}
+            {%- else -%}
+              {%- assign index = forloop.index0 | modulo: 6 | plus: 1 -%}
+              {%- capture placeholder -%}collection-{{ index }}{%- endcapture -%}
+              {{ placeholder | placeholder_svg_tag: 'collection-card__image placeholder-svg' }}
+            {%- endif -%}
+          </div>
+          <div class="collection-card__label">
+            <span class="collection-card__title">{{ collection.title | escape }}</span>
+            <span class="collection-card__cta">Explore</span>
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collections list page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Collections"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,80 @@
+<section class="section image-with-text{% if section.settings.layout == 'image_right' %} image-with-text--reverse{% endif %}">
+  <div class="page-width">
+    <div class="image-with-text__grid">
+      <div class="image-with-text__media">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1400 | image_tag: class: 'image-with-text__image', widths: '500, 750, 1000, 1400', alt: section.settings.heading | escape }}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'image-with-text__image placeholder-svg' }}
+        {%- endif -%}
+      </div>
+      <div class="image-with-text__content">
+        {%- if section.settings.kicker != blank -%}
+          <p class="section__kicker">{{ section.settings.kicker | escape }}</p>
+        {%- endif -%}
+        <h2 class="section__heading">{{ section.settings.heading | escape }}</h2>
+        <div class="rte">{{ section.settings.text }}</div>
+        {%- if section.settings.button_label != blank -%}
+          <a href="{{ section.settings.button_link }}" class="button button--outline">{{ section.settings.button_label | escape }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image with text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Image position",
+      "options": [
+        { "value": "image_left", "label": "Image left" },
+        { "value": "image_right", "label": "Image right" }
+      ],
+      "default": "image_left"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker text",
+      "default": "Our craft"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Where rarity meets artistry"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Every Blue Diamond Co piece begins with an exceptional stone. Our gemologists hand-select diamonds and precious gems for their fire, clarity and character, before our master jewellers set them in 18k gold and platinum. From signature tennis bracelets to bespoke commissions, each creation is made to be worn for a lifetime — and admired forever.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Our story"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text"
+    }
+  ]
+}
+{% endschema %}

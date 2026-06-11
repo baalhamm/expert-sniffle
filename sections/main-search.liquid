@@ -1,0 +1,58 @@
+<section class="section main-search">
+  <div class="page-width">
+    <header class="collection-header">
+      <h1 class="collection-header__title">
+        {%- if search.performed -%}
+          Search results
+        {%- else -%}
+          Search
+        {%- endif -%}
+      </h1>
+    </header>
+
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search-form">
+      <label for="SearchInput" class="visually-hidden">Search our store</label>
+      <input
+        id="SearchInput"
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="Search rings, watches, pendants..."
+      >
+      <input type="hidden" name="options[prefix]" value="last">
+      <button type="submit" class="button button--primary">Search</button>
+    </form>
+
+    {%- if search.performed -%}
+      {%- if search.results_count > 0 -%}
+        <p class="search-results-count">{{ search.results_count }} results for &ldquo;{{ search.terms | escape }}&rdquo;</p>
+        {%- paginate search.results by 16 -%}
+          <div class="product-grid product-grid--4">
+            {%- for item in search.results -%}
+              {%- if item.object_type == 'product' -%}
+                {% render 'product-card', card_product: item %}
+              {%- else -%}
+                <article class="search-result-text">
+                  <a href="{{ item.url }}">
+                    <h3>{{ item.title | escape }}</h3>
+                    <p>{{ item.content | strip_html | truncatewords: 24 }}</p>
+                  </a>
+                </article>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          {% render 'pagination', paginate: paginate %}
+        {%- endpaginate -%}
+      {%- else -%}
+        <p class="empty-state">No results found for &ldquo;{{ search.terms | escape }}&rdquo;. Try a different search.</p>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Search page",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,125 @@
+<footer class="site-footer">
+  <div class="page-width">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        {%- if settings.logo != blank -%}
+          {{ settings.logo | image_url: width: 400 | image_tag: width: settings.logo_width, alt: shop.name }}
+        {%- else -%}
+          <p class="site-footer__logo-text">{{ shop.name }}</p>
+        {%- endif -%}
+        {%- if section.settings.about_text != blank -%}
+          <p class="site-footer__about">{{ section.settings.about_text }}</p>
+        {%- endif -%}
+        <div class="site-footer__social">
+          {%- if settings.social_instagram != blank -%}
+            <a href="{{ settings.social_instagram }}" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.social_tiktok != blank -%}
+            <a href="{{ settings.social_tiktok }}" aria-label="TikTok" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.6 7.2a5.1 5.1 0 0 1-3.5-1.4 5.1 5.1 0 0 1-1.5-3.1h-3.2v12.9a2.7 2.7 0 1 1-2.7-2.7c.3 0 .5 0 .8.1V9.7a6 6 0 0 0-.8-.1 6 6 0 1 0 6 6V9.9a8.2 8.2 0 0 0 4.9 1.6V8.3z"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.social_youtube != blank -%}
+            <a href="{{ settings.social_youtube }}" aria-label="YouTube" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.social_facebook != blank -%}
+            <a href="{{ settings.social_facebook }}" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V9H6.5v3.5H9V21h3.5v-8.5H15L15.5 9h-3V6.8c0-.5.3-.8.8-.8H15V3z"/></svg>
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- if section.settings.menu_1 != blank -%}
+        <div class="site-footer__column">
+          <h3 class="site-footer__heading">{{ section.settings.menu_1_title | escape }}</h3>
+          <ul class="site-footer__links">
+            {%- for link in section.settings.menu_1.links -%}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.menu_2 != blank -%}
+        <div class="site-footer__column">
+          <h3 class="site-footer__heading">{{ section.settings.menu_2_title | escape }}</h3>
+          <ul class="site-footer__links">
+            {%- for link in section.settings.menu_2.links -%}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+
+      <div class="site-footer__column">
+        <h3 class="site-footer__heading">{{ section.settings.contact_title | escape }}</h3>
+        <div class="site-footer__contact rte">{{ section.settings.contact_text }}</div>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+      {%- if shop.enabled_payment_types.size > 0 -%}
+        <ul class="site-footer__payment" aria-label="Accepted payment methods">
+          {%- for type in shop.enabled_payment_types -%}
+            <li>{{ type | payment_type_svg_tag }}</li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "about_text",
+      "label": "About text",
+      "default": "Blue Diamond Co is your destination for exceptional diamonds, fine jewellery and luxury timepieces, crafted and curated with uncompromising standards."
+    },
+    {
+      "type": "text",
+      "id": "menu_1_title",
+      "label": "First menu heading",
+      "default": "Shop"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": "First menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "text",
+      "id": "menu_2_title",
+      "label": "Second menu heading",
+      "default": "Customer care"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": "Second menu"
+    },
+    {
+      "type": "text",
+      "id": "contact_title",
+      "label": "Contact heading",
+      "default": "Visit us"
+    },
+    {
+      "type": "richtext",
+      "id": "contact_text",
+      "label": "Contact details",
+      "default": "<p>Blue Diamond Co<br>By appointment only<br>info@bluediamondco.com</p>"
+    }
+  ]
+}
+{% endschema %}
