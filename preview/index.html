@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blue Diamond Co — Homepage preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Assistant:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* Mirrors the CSS variables that layout/theme.liquid generates from the
+     theme's default settings (config/settings_schema.json). */
+  :root {
+    --font-heading: 'Playfair Display', serif;
+    --font-heading-weight: 400;
+    --font-body: 'Assistant', sans-serif;
+    --font-body-weight: 400;
+    --color-bg: #0b0d10;
+    --color-surface: #14181d;
+    --color-text: #f4f2ec;
+    --color-text-muted: rgba(244, 242, 236, 0.62);
+    --color-accent: #8ecfee;
+    --color-accent-contrast: #0b0d10;
+    --color-border: rgba(244, 242, 236, 0.14);
+    --page-width: 130rem;
+  }
+  .gem-art { width: 100%; height: 100%; display: block; background:
+    radial-gradient(circle at 50% 38%, color-mix(in srgb, currentColor 10%, transparent), transparent 62%),
+    var(--color-surface); }
+</style>
+<link rel="stylesheet" href="../assets/base.css">
+</head>
+<body class="template-index">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="gem" viewBox="0 0 200 200">
+    <g fill="none" stroke="currentColor" stroke-width="1.6">
+      <polygon points="55,80 78,52 122,52 145,80 100,158" fill="currentColor" fill-opacity="0.07"/>
+      <line x1="55" y1="80" x2="145" y2="80"/>
+      <line x1="78" y1="52" x2="90" y2="80"/>
+      <line x1="122" y1="52" x2="110" y2="80"/>
+      <line x1="90" y1="80" x2="100" y2="158"/>
+      <line x1="110" y1="80" x2="100" y2="158"/>
+      <line x1="100" y1="52" x2="90" y2="80"/>
+      <line x1="100" y1="52" x2="110" y2="80"/>
+    </g>
+    <path d="M152 36 l2.4 6.4 6.4 2.4 -6.4 2.4 -2.4 6.4 -2.4 -6.4 -6.4 -2.4 6.4 -2.4z" fill="currentColor" opacity="0.8"/>
+  </symbol>
+</svg>
+
+<div class="announcement-bar">
+  <p class="announcement-bar__text">Complimentary insured worldwide delivery on all orders</p>
+</div>
+
+<header class="site-header">
+  <div class="site-header__inner page-width">
+    <button class="site-header__menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a href="#" class="site-header__logo"><span class="site-header__logo-text">Blue Diamond Co</span></a>
+    <nav class="site-header__nav">
+      <ul class="site-header__menu">
+        <li class="site-header__menu-item"><a href="#">Rings</a></li>
+        <li class="site-header__menu-item"><a href="#">Necklaces</a></li>
+        <li class="site-header__menu-item"><a href="#">Bracelets</a></li>
+        <li class="site-header__menu-item"><a href="#">Watches</a></li>
+        <li class="site-header__menu-item"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__icons">
+      <a href="#" class="site-header__icon" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></a>
+      <a href="#" class="site-header__icon" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></a>
+      <a href="#" class="site-header__icon site-header__icon--cart" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M6 7h12l1.5 13h-15L6 7z"/><path d="M9 10V5a3 3 0 0 1 6 0v5"/></svg>
+        <span class="site-header__cart-count">2</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero hero--placeholder">
+    <div class="hero__overlay"></div>
+    <div class="hero__content page-width">
+      <p class="hero__kicker">Fine jewellery &amp; luxury timepieces</p>
+      <h1 class="hero__heading">Brilliance, Set in Blue</h1>
+      <p class="hero__subheading">Discover hand-selected diamonds, bespoke pieces and the world's most coveted watches.</p>
+      <div class="hero__buttons">
+        <a href="#" class="button button--primary">Shop jewellery</a>
+        <a href="#" class="button button--outline">Shop watches</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section collection-list">
+    <div class="page-width">
+      <header class="section__header"><h2 class="section__heading">Shop by category</h2></header>
+      <div class="collection-list__grid collection-list__grid--4">
+        <a class="collection-card" href="#">
+          <div class="collection-card__media"><svg class="collection-card__image gem-art" style="color:#8ecfee"><use href="#gem"/></svg></div>
+          <div class="collection-card__label"><span class="collection-card__title">Rings</span><span class="collection-card__cta">Explore</span></div>
+        </a>
+        <a class="collection-card" href="#">
+          <div class="collection-card__media"><svg class="collection-card__image gem-art" style="color:#a9d9ef"><use href="#gem"/></svg></div>
+          <div class="collection-card__label"><span class="collection-card__title">Pendants &amp; Necklaces</span><span class="collection-card__cta">Explore</span></div>
+        </a>
+        <a class="collection-card" href="#">
+          <div class="collection-card__media"><svg class="collection-card__image gem-art" style="color:#7fc2e2"><use href="#gem"/></svg></div>
+          <div class="collection-card__label"><span class="collection-card__title">Bracelets</span><span class="collection-card__cta">Explore</span></div>
+        </a>
+        <a class="collection-card" href="#">
+          <div class="collection-card__media"><svg class="collection-card__image gem-art" style="color:#c8b88a"><use href="#gem"/></svg></div>
+          <div class="collection-card__label"><span class="collection-card__title">Watches</span><span class="collection-card__cta">Explore</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section featured-collection">
+    <div class="page-width">
+      <header class="section__header section__header--split">
+        <h2 class="section__heading">New arrivals</h2>
+        <a href="#" class="link-arrow">View all</a>
+      </header>
+      <div class="product-grid product-grid--4">
+        <article class="product-card"><a href="#" class="product-card__link">
+          <div class="product-card__media"><svg class="product-card__image gem-art" style="color:#8ecfee"><use href="#gem"/></svg></div>
+          <div class="product-card__info"><p class="product-card__vendor">Blue Diamond Co</p><h3 class="product-card__title">Azure Solitaire Ring</h3><div class="product-card__price"><span class="price">$4,950</span></div></div>
+        </a></article>
+        <article class="product-card"><a href="#" class="product-card__link">
+          <div class="product-card__media"><svg class="product-card__image gem-art" style="color:#9fd4ec"><use href="#gem"/></svg><span class="product-card__badge product-card__badge--sale">Sale</span></div>
+          <div class="product-card__info"><p class="product-card__vendor">Blue Diamond Co</p><h3 class="product-card__title">Glacier Tennis Bracelet</h3><div class="product-card__price"><span class="price price--sale">$7,200</span><s class="price price--compare">$8,400</s></div></div>
+        </a></article>
+        <article class="product-card"><a href="#" class="product-card__link">
+          <div class="product-card__media"><svg class="product-card__image gem-art" style="color:#86c9e6"><use href="#gem"/></svg></div>
+          <div class="product-card__info"><p class="product-card__vendor">Blue Diamond Co</p><h3 class="product-card__title">Eternity Diamond Band</h3><div class="product-card__price"><span class="price">$3,850</span></div></div>
+        </a></article>
+        <article class="product-card"><a href="#" class="product-card__link">
+          <div class="product-card__media"><svg class="product-card__image gem-art" style="color:#7fb9dc"><use href="#gem"/></svg></div>
+          <div class="product-card__info"><p class="product-card__vendor">Blue Diamond Co</p><h3 class="product-card__title">Blue Sapphire Pendant</h3><div class="product-card__price"><span class="price">$2,975</span></div></div>
+        </a></article>
+        <article class="product-card"><a href="#" class="product-card__link">
+          <div class="product-card__media"><svg class="product-card__image gem-art" style="color:#c8b88a"><use href="#gem"/></svg></div>
+          <div class="product-card__info"><p class="product-card__vendor">Blue Diamond Co</p><h3 class="product-card__title">Royal Chronograph 40mm</h3><div class="product-card__price"><span class="price">$18,500</span></div></div>
+        </a></article>
+        <article class="product-card"><a href="#" class="product-card__link">
+          <div class="product-card__media"><svg class="product-card__image gem-art" style="color:#a3d6ee"><use href="#gem"/></svg></div>
+          <div class="product-card__info"><p class="product-card__vendor">Blue Diamond Co</p><h3 class="product-card__title">Pav&eacute; Diamond Hoops</h3><div class="product-card__price"><span class="price">$2,400</span></div></div>
+        </a></article>
+        <article class="product-card"><a href="#" class="product-card__link">
+          <div class="product-card__media"><svg class="product-card__image gem-art" style="color:#8ecfee"><use href="#gem"/></svg></div>
+          <div class="product-card__info"><p class="product-card__vendor">Blue Diamond Co</p><h3 class="product-card__title">Marquise Cluster Ring</h3><div class="product-card__price"><span class="price">$5,600</span></div></div>
+        </a></article>
+        <article class="product-card"><a href="#" class="product-card__link">
+          <div class="product-card__media"><svg class="product-card__image gem-art" style="color:#6fb3d6"><use href="#gem"/></svg><span class="product-card__badge product-card__badge--sold-out">Sold out</span></div>
+          <div class="product-card__info"><p class="product-card__vendor">Blue Diamond Co</p><h3 class="product-card__title">Ice Link Chain 18k</h3><div class="product-card__price"><span class="price">$6,150</span></div></div>
+        </a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section image-with-text">
+    <div class="page-width">
+      <div class="image-with-text__grid">
+        <div class="image-with-text__media"><svg class="image-with-text__image gem-art" style="color:#8ecfee"><use href="#gem"/></svg></div>
+        <div class="image-with-text__content">
+          <p class="section__kicker">Our craft</p>
+          <h2 class="section__heading">Where rarity meets artistry</h2>
+          <div class="rte"><p>Every Blue Diamond Co piece begins with an exceptional stone. Our gemologists hand-select diamonds and precious gems for their fire, clarity and character, before our master jewellers set them in 18k gold and platinum. From signature tennis bracelets to bespoke commissions, each creation is made to be worn for a lifetime &mdash; and admired forever.</p></div>
+          <a href="#" class="button button--outline">Our story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonials">
+    <div class="page-width">
+      <header class="section__header"><h2 class="section__heading">What our clients say</h2></header>
+      <div class="testimonials__grid">
+        <figure class="testimonial-card">
+          <div class="testimonial-card__stars"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg></div>
+          <blockquote class="testimonial-card__quote">Outstanding craftsmanship and service from start to finish. My engagement ring exceeded every expectation.</blockquote>
+          <figcaption class="testimonial-card__author">James R.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <div class="testimonial-card__stars"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg></div>
+          <blockquote class="testimonial-card__quote">The team sourced an incredible stone for my custom pendant and kept me updated at every stage. Flawless experience.</blockquote>
+          <figcaption class="testimonial-card__author">Aaliyah M.</figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <div class="testimonial-card__stars"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.3 21 12 17.4 5.7 21l1.5-6.8L2 9.4l7-.8L12 2z"/></svg></div>
+          <blockquote class="testimonial-card__quote">Fast, fully insured delivery and the watch was even better in person. I wouldn't shop anywhere else.</blockquote>
+          <figcaption class="testimonial-card__author">Daniel K.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section newsletter">
+    <div class="page-width newsletter__inner">
+      <h2 class="section__heading">Join the Blue Diamond circle</h2>
+      <p class="newsletter__text">Be the first to discover new arrivals, private releases and exclusive events.</p>
+      <form class="newsletter__form">
+        <div class="newsletter__field">
+          <input type="email" placeholder="Your email address">
+          <button type="button" class="button button--primary">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="page-width">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <p class="site-footer__logo-text">Blue Diamond Co</p>
+        <p class="site-footer__about">Blue Diamond Co is your destination for exceptional diamonds, fine jewellery and luxury timepieces, crafted and curated with uncompromising standards.</p>
+        <div class="site-footer__social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.6 7.2a5.1 5.1 0 0 1-3.5-1.4 5.1 5.1 0 0 1-1.5-3.1h-3.2v12.9a2.7 2.7 0 1 1-2.7-2.7c.3 0 .5 0 .8.1V9.7a6 6 0 0 0-.8-.1 6 6 0 1 0 6 6V9.9a8.2 8.2 0 0 0 4.9 1.6V8.3z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div class="site-footer__column">
+        <h3 class="site-footer__heading">Shop</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Rings</a></li>
+          <li><a href="#">Necklaces</a></li>
+          <li><a href="#">Bracelets</a></li>
+          <li><a href="#">Watches</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__column">
+        <h3 class="site-footer__heading">Customer care</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Shipping &amp; returns</a></li>
+          <li><a href="#">Care guide</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__column">
+        <h3 class="site-footer__heading">Visit us</h3>
+        <div class="site-footer__contact rte"><p>Blue Diamond Co<br>By appointment only<br>info@bluediamondco.com</p></div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>&copy; 2026 Blue Diamond Co. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
